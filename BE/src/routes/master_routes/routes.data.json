@@ -1,0 +1,278 @@
+[
+  {
+    "path": "/register",
+    "method": "post",
+    "controller": "UserController.register"
+  },
+  {
+    "path": "/users",
+    "method": "get",
+    "controller": "UserController.getUsers"
+  },
+  {
+    "path": "/user/:id",
+    "method": "put",
+    "controller": "UserController.updateUser"
+  },
+  {
+    "path": "/user/:id",
+    "method": "delete",
+    "controller": "UserController.deleteUser"
+  },
+  {
+    "path": "/employees",
+    "method": "get",
+    "controller": "EmployeeController.getAllEmployee"
+  },
+  {
+    "path": "/employee/:id",
+    "method": "get",
+    "controller": "EmployeeController.getEmployeeById"
+  },
+  {
+    "path": "/employee-by-nik/:nik",
+    "method": "get",
+    "controller": "EmployeeController.getEmployeeByNIK"
+  },
+  {
+    "path": "/employee",
+    "method": "post",
+    "controller": "EmployeeController.createEmployee"
+  },
+  {
+    "path": "/employee/:id",
+    "method": "put",
+    "controller": "EmployeeController.updateEmployee"
+  },
+  {
+    "path": "/employee/:id",
+    "method": "delete",
+    "controller": "EmployeeController.deleteEmployee"
+  },
+  {
+    "path": "/prosess",
+    "method": "get",
+    "controller": "ProsesController.getAllProses"
+  },
+  {
+    "path": "/proses/:idproses",
+    "method": "get",
+    "controller": "ProsesController.getProsesById"
+  },
+  {
+    "path": "/proses",
+    "method": "post",
+    "controller": "ProsesController.createProses"
+  },
+  {
+    "path": "/proses/:id",
+    "method": "put",
+    "controller": "ProsesController.updateProses"
+  },
+  {
+    "path": "/proses/:id",
+    "method": "delete",
+    "controller": "ProsesController.deleteProses"
+  },
+  {
+    "path": "/targets",
+    "method": "get",
+    "controller": "TargetController.getAllTargets"
+  },
+  {
+    "path": "/target/:id",
+    "method": "get",
+    "controller": "TargetController.getTargetById"
+  },
+  {
+    "path": "/target",
+    "method": "post",
+    "controller": "TargetController.createTarget"
+  },
+  {
+    "path": "/target/:id",
+    "method": "put",
+    "controller": "TargetController.updateTarget"
+  },
+  {
+    "path": "/target/:id",
+    "method": "delete",
+    "controller": "TargetController.deleteTarget"
+  },
+  {
+    "path": "/datamrs",
+    "method": "get",
+    "controller": "MrController.getAllDataMR"
+  },
+  {
+    "path": "/nonaktif-mr",
+    "method": "get",
+    "controller": "MrController.getAllNonaktifMR"
+  },
+  {
+    "path": "/aktif-mr",
+    "method": "post",
+    "controller": "MrController.aktifkanMR"
+  },
+  {
+    "path": "/nonaktif-mr",
+    "method": "post",
+    "controller": "MrController.nonaktifMR"
+  },
+  {
+    "path": "/datamr/:nourut/:kode_checklist",
+    "method": "get",
+    "controller": "MrController.getDataMRByKeys"
+  },
+  {
+    "path": "/datamr",
+    "method": "post",
+    "controller": "MrController.createDataMR"
+  },
+  {
+    "path": "/datamr/:nourut/:kode_checklist",
+    "method": "put",
+    "controller": "MrController.updateDataMR"
+  },
+  {
+    "path": "/datamr/:nourut/:kode_checklist",
+    "method": "delete",
+    "controller": "MrController.deleteDataMR"
+  },
+  {
+    "path": "/export-datamr",
+    "method": "post",
+    "controller": "MrController.exportCsv"
+  },
+  {
+    "path": "/candras",
+    "method": "get",
+    "controller": "CandraController.getAllCandra"
+  },
+  {
+    "path": "/candra-now",
+    "method": "get",
+    "controller": "CandraController.getAllCandraDayNow"
+  },
+  {
+    "path": "/candra/:kode_checklist/:idproses",
+    "method": "get",
+    "controller": "CandraController.getCandraByKeys"
+  },
+  {
+    "path": "/candra",
+    "method": "post",
+    "controller": "CandraController.createCandra"
+  },
+  {
+    "path": "/add-scan",
+    "method": "post",
+    "controller": "CandraController.addScanCandra"
+  },
+  {
+    "path": "/candra/:kode_checklist/:idproses",
+    "method": "put",
+    "controller": "CandraController.updateCandra"
+  },
+  {
+    "path": "/finish-proses/:kode_checklist/:idproses",
+    "method": "put",
+    "controller": "CandraController.finishedProses"
+  },
+  {
+    "path": "/finish-proses-scan/:kode_checklist/:idproses",
+    "method": "put",
+    "controller": "CandraController.finishedProsesScan"
+  },
+  {
+    "path": "/candra/:id",
+    "method": "delete",
+    "controller": "CandraController.deleteCandra"
+  },
+  {
+    "path": "/export-candra",
+    "method": "post",
+    "controller": "CandraController.exportCsv"
+  },
+  {
+    "path": "/upload-mdb",
+    "method": "post",
+    "controller": "UploadController.uploadFile",
+    "middleware": "upload.single"
+  },
+  {
+    "path": "/data-statistik/:date",
+    "method": "get",
+    "controller": "DashboardController.getTotalStatistik"
+  },
+  {
+    "path": "/data-summary",
+    "method": "get",
+    "controller": "DashboardController.getSummaryData"
+  },
+  {
+    "path": "/data-pie",
+    "method": "get",
+    "controller": "DashboardController.getDataPieChart"
+  },
+  {
+    "path": "/realtime-proses",
+    "method": "get",
+    "controller": "DashboardController.getDataRealTime"
+  },
+  {
+    "path": "/proses-onprogres/:kode_checklist",
+    "method": "get",
+    "controller": "DashboardController.getDataProses"
+  },
+  {
+    "path": "/primary-chart/:monthSelected",
+    "method": "get",
+    "controller": "DashboardController.getDataPrimaryChart"
+  },
+  {
+    "path": "/datMRt3",
+    "method": "get",
+    "controller": "MrController.getAllDataMRt3"
+  },
+  {
+    "path": "/finishing-checksheet/:kode_checklist",
+    "method": "get",
+    "controller": "MrController.generateFinishinCheecksheet"
+  },
+  {
+    "path": "/qc-checksheet/:kode_checklist",
+    "method": "get",
+    "controller": "MrController.generateQcChecksheet"
+  },
+  {
+    "path": "/dataMRt3",
+    "method": "put",
+    "controller": "MrController.updateMRt3"
+  },
+  {
+    "path": "/dataMRt3/:NoUrut/:Kode_Checklist",
+    "method": "delete",
+    "controller": "MrController.removeMRt3"
+  },
+  {
+    "path": "/export-mrt3",
+    "method": "post",
+    "controller": "MrController.exportCSVMRt3"
+  },
+  {
+    "path": "/log",
+    "method": "post",
+    "controller": "LogController.addLog"
+  },
+  {
+    "path": "/validate-proses",
+    "method": "get",
+    "controller": "CandraController.validate1007"
+  },
+  {
+    "path": "/rs-name",
+    "method": "get",
+    "controller": "MrController.getRsNameYarsi"
+  }
+]

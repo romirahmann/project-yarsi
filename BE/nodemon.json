@@ -1,0 +1,8 @@
+{
+  "watch": ["app.js", "src"],
+  "ignore": ["node_modules"],
+  "execMap": {
+    "js": "node -r dotenv/config"
+  },
+  "delay": "1000"
+}
