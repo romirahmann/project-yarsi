@@ -190,9 +190,15 @@
 [SUCCESSFULLY]-[24-03-2025 14:18:21]  Proses dengan Kode Checklist: 241014-0009 dan ID Proses 1004 telah ditambahkan oleh romirahman
 [SUCCESSFULLY]-[24-03-2025 14:18:25]  Proses dengan Kode Checklist: 241014-0009 dan ID Proses 1004 telah diselesaikan oleh romirahman
 [SUCCESSFULLY]-[24-03-2025 14:20:30]  romirahman edit data Proses dengan ID 1005
+<<<<<<< HEAD
 [SUCCESSFULLY]-[25-03-2025 08:34:02]  romirahman Berhasil Login
 [SUCCESSFULLY]-[25-03-2025 08:54:27]  romirahman Berhasil Login
 [SUCCESSFULLY]-[25-03-2025 08:54:50]  User romirahman telah logout
 [SUCCESSFULLY]-[25-03-2025 09:35:25]  romirahman Berhasil Login
 [SUCCESSFULLY]-[25-03-2025 09:35:25]  romirahman Berhasil Login
 [SUCCESSFULLY]-[25-03-2025 09:35:37]  User romirahman telah logout
+=======
+[SUCCESSFULLY]-[26-03-2025 13:34:07]  romirahman Berhasil Login
+[SUCCESSFULLY]-[26-03-2025 13:42:39]  aziz Berhasil Login
+[SUCCESSFULLY]-[26-03-2025 13:42:40]  aziz Berhasil Login
+>>>>>>> 031941ec84616c6d4810c86e0d9b9c37b1cc2296
