@@ -52,6 +52,10 @@ export function StatistikDashboard() {
     setSelectionDate(moment(value).format("YYYY-MM-DD"));
   };
 
+  const formatNumber = (num) => {
+    return new Intl.NumberFormat("id-ID").format(num || 0);
+  };
+
   return (
     <>
       <div className="countContent bg-gradient-to-r from-cyan-500 to-blue-500 p-10 rounded-xl">
@@ -93,7 +97,7 @@ export function StatistikDashboard() {
               </h5>
             </span>
             <p className="mb-3 text-2xl font-normal text-gray-500 dark:text-gray-400">
-              {statistikData?.totalMR}
+              {formatNumber(statistikData?.totalMR)}
             </p>
           </div>
           {/* Image */}
@@ -106,7 +110,7 @@ export function StatistikDashboard() {
             </span>
             <p className="mb-3 text-2xl font-normal text-gray-500 dark:text-gray-400">
               {statistikData?.totalImage !== null
-                ? statistikData.totalImage
+                ? formatNumber(statistikData?.totalImage)
                 : 0}
             </p>
           </div>
@@ -132,7 +136,7 @@ export function StatistikDashboard() {
             </span>
             <p className="mb-3 text-2xl font-normal text-gray-500 dark:text-gray-400">
               {statistikData?.totalLembar !== null
-                ? statistikData.totalLembar
+                ? formatNumber(statistikData?.totalLembar)
                 : 0}
             </p>
           </div>
