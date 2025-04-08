@@ -17,7 +17,7 @@ const login = async (req, res) => {
       return api.error(res, "Account Not Found", 404);
     }
 
-    console.log(user);
+    // console.log(user);
     // ✅ Gunakan await saat memverifikasi password
     const passwordIsMatch = await verifyPassword(password, user.password);
     if (!passwordIsMatch) {

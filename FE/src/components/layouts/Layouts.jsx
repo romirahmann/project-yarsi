@@ -220,7 +220,11 @@ export function Layout() {
         {/* Topbar */}
         <div className="flex justify-between items-center p-4 bg-white shadow-md">
           <span className="flex items-center font-semibold">
-            <img src="/images/logo_candra.png" className="w-8" alt="Logo" />
+            <img
+              src="/yarsi/images/logo_candra.png"
+              className="w-8"
+              alt="Logo"
+            />
             <span className="ms-2 text-2xl font-bold">CANDRA</span>
           </span>
           <div className="relative">

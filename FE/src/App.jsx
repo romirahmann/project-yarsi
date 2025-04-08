@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <ApiUrl.Provider value={baseUrl}>
-        <RouterProvider router={router} />
+        <RouterProvider router={router} basepath="/yarsi" />
       </ApiUrl.Provider>
     </>
   );
