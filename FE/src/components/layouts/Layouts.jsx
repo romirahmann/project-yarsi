@@ -221,7 +221,7 @@ export function Layout() {
         <div className="flex justify-between items-center p-4 bg-white shadow-md">
           <span className="flex items-center font-semibold">
             <img
-              src="/yarsi/images/logo_candra.png"
+              src="/RSGM-YARSI/images/logo_candra.png"
               className="w-8"
               alt="Logo"
             />

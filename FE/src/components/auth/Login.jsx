@@ -98,7 +98,11 @@ export function Login() {
                 </div>
               )}
               <div className="brand flex justify-center items-center">
-                <img src="/images/logo_candra.png" className="w-12" alt="" />
+                <img
+                  src="/RSGM-YARSI/images/logo_candra.png"
+                  className="w-12"
+                  alt=""
+                />
                 <span className="text-3xl text-white font-bold mx-5">
                   CANDRA
                 </span>
