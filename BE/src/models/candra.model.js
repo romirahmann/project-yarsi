@@ -75,6 +75,7 @@ const getAllByDateNow = async () => {
       editBy
     FROM tblcandra
     WHERE tanggal = FORMAT(NOW(), 'yyyy-MM-dd')
+    ORDER BY mulai DESC
   `;
   const result = await db.query(query);
   return result;
