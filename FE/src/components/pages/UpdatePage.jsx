@@ -35,7 +35,7 @@ export function UpdatePage() {
     setLoading(true);
     try {
       let res = await axios.get(`${baseUrl}/master/validate-proses`);
-      // console.log(res.data.data);
+
       setCandraNotComplete(res.data.data);
       setFilteredData(res.data.data);
       setLoading(false);
@@ -56,7 +56,7 @@ export function UpdatePage() {
 
   const handleUpload = async (type) => {
     setLoading(true);
-    // console.log(type);
+
     const file = type === "candra" ? fileCandra : fileQty;
 
     if (!file) {

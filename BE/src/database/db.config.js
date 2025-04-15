@@ -3,7 +3,7 @@ require("dotenv").config();
 const path = require("path");
 
 // Path absolut ke file MDB
-const dbPath = path.resolve("Y:DBASE/dbData.mdb");
+const dbPath = path.resolve(process.env.DB_PATH);
 
 const dbPassword = "adi121711";
 
