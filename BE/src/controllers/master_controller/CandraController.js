@@ -95,6 +95,7 @@ const addScanCandra = async (req, res) => {
       data.kode_checklist,
       data.idproses
     );
+
     if (existingCandra) {
       return api.error(
         res,
@@ -309,26 +310,28 @@ const exportCsv = async (req, res) => {
 
 const validate1007 = async (req, res) => {
   try {
-    let fourDaysAgo = moment().subtract(4, "days").format("YYYY-MM-DD");
+    // let fourDaysAgo = moment().subtract(4, "days").format("YYYY-MM-DD");
+    let fourDaysAgo = moment().format("YYYY-MM-DD");
+    // console.log(fourDaysAgo);
     let dataCandra = await model.getCandraByDate1001(fourDaysAgo);
 
     if (dataCandra.length === 0) {
       return api.ok(res, []);
     }
 
-    // let kodeChecklistList = dataCandra.map((item) => item.kode_checklist);
-    let data = await model.getCandraTanpaFilter();
+    let kodeChecklistList = dataCandra.map((item) => item.kode_checklist);
+    let data = await model.getCandraFilterByKode(kodeChecklistList);
 
     let kodeUnik = [...new Set(data.map((d) => d.kode_checklist))];
 
     const targetProses = ["1007", "1005", "1004"];
 
     // Referensi nama proses
-    let prosesData = await modelProses.getAllProses(); // Ambil semua data proses
+    let prosesData = await modelProses.getAllProses();
     let prosesMap = {};
 
     prosesData.forEach((proses) => {
-      prosesMap[proses.idproses] = proses.nama_proses; // Mapping idproses -> nama_proses
+      prosesMap[proses.idproses] = proses.nama_proses;
     });
 
     let hasil = [];
@@ -346,7 +349,7 @@ const validate1007 = async (req, res) => {
 
           const selesai = item?.selesai?.trim();
 
-          if (!item || selesai === "00:00:00") {
+          if (!item || !selesai || selesai === "00:00:00") {
             // console.log(
             //   `kode: ${kode} | idproses: ${id} | nama_proses: ${
             //     item?.nama_proses || prosesMap[id]

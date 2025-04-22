@@ -75,7 +75,9 @@ const getAllByDateNow = async () => {
       editBy
     FROM tblcandra
     WHERE tanggal = FORMAT(NOW(), 'yyyy-MM-dd')
-    ORDER BY mulai DESC
+    ORDER BY 
+    IIF(FORMAT(selesai, 'hh:nn:ss') = '00:00:00', 0, 1), 
+    mulai DESC;
   `;
   const result = await db.query(query);
   return result;
@@ -235,18 +237,23 @@ const getCandraByDate1001 = async (date) => {
   return result;
 };
 
-const getCandraTanpaFilter = async () => {
+const getCandraFilterByKode = async (kodeList) => {
   const db = getDB();
-  // let checklistStr = kodeChecklistList.map((kc) => `'${kc}'`).join(",");
+
+  // Pastikan semua kode di-escape dan dikutip
+  const inClause = kodeList
+    .map((kode) => `'${kode.replace(/'/g, "''")}'`)
+    .join(",");
 
   const query = `
-   SELECT 
-  c.kode_checklist, 
-  c.idproses,
-  p.nama_proses,
-  FORMAT(c.selesai, 'HH:mm:ss') AS selesai
-FROM tblcandra c
-LEFT JOIN tblproses p ON c.idproses = p.idproses
+    SELECT 
+      c.kode_checklist, 
+      c.idproses,
+      p.nama_proses,
+      FORMAT(c.selesai, 'HH:mm:ss') AS selesai
+    FROM tblcandra c
+    LEFT JOIN tblproses p ON c.idproses = p.idproses
+    WHERE c.kode_checklist IN (${inClause})
   `;
 
   const result = await db.query(query);
@@ -267,5 +274,5 @@ module.exports = {
   finishedProsesScan,
   getCandraByChecklist,
   getCandraByDate1001,
-  getCandraTanpaFilter,
+  getCandraFilterByKode,
 };
