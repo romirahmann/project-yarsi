@@ -12,6 +12,7 @@ export function TableRealTime() {
   const [filteredData, setFilteredData] = useState([]);
   const [paginatedData, setPaginatedData] = useState([]);
   const baseUrl = useContext(ApiUrl);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     fetchChecklist();
@@ -30,7 +31,9 @@ export function TableRealTime() {
     }
   };
 
-  const handleQuery = () => {};
+  const handleQuery = (val) => {
+    setQuery(val);
+  };
 
   return (
     <div className="container-fluid p-5">
@@ -43,7 +46,8 @@ export function TableRealTime() {
           <SearchComponent
             result={setFilteredData}
             data={checklist}
-            queryInput={() => handleQuery()}
+            queryInput={(val) => handleQuery(val)}
+            currentQuery={query}
           />
         </div>
       </div>

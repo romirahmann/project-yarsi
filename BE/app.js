@@ -10,7 +10,7 @@ const app = express();
 const server = createServer(app); // Buat HTTP Server
 
 // Middleware
-app.use(express.json());
+app.use(express.json({ limit: "50mb" }));
 app.use(
   cors({
     origin: "*", // Atau ganti dengan "http://192.168.9.192:3000" jika hanya untuk frontend tertentu
@@ -19,7 +19,7 @@ app.use(
   })
 );
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
 // Koneksi Database sebelum server berjalan
 Promise.all([connectDB(), connectDB2()])

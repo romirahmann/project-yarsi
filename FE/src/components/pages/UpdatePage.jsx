@@ -296,7 +296,10 @@ export function UpdatePage() {
                 {paginatedData.length > 0 ? (
                   paginatedData.map((data, index) => (
                     <tr key={index} className="border-b">
-                      <td className="px-6 py-4 text-wrap">{index + 1}</td>
+                      <td className="px-6 py-4 text-wrap">
+                        {" "}
+                        {index + 1 + (currentPage - 1) * 10}
+                      </td>
                       <td className="px-6 py-4 text-wrap">
                         {data.kode_checklist}
                       </td>

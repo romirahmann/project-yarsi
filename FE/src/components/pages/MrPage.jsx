@@ -66,6 +66,7 @@ export function MrPage() {
     setLoading(true);
     const exportCsv = async () => {
       try {
+        console.log(filteredData.length);
         const response = await axios.post(
           `${baseUrl}/master/export-datamr/`,
           filteredData,
@@ -96,7 +97,7 @@ export function MrPage() {
       } catch (error) {
         console.error("❌ Error saat mendownload CSV:", error);
         AddLog(`${userLogin.username} Export Data MR`, "FAILED");
-        setErrorMessage("Gagal Export CSV");
+        setErrorMessage("Gagal Export CSV ", error);
         setLoading(false);
         setTimeout(() => {
           setErrorMessage("");

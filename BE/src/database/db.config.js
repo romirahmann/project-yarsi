@@ -4,7 +4,7 @@ const path = require("path");
 
 // Path absolut ke file MDB
 const dbPath = path.resolve(process.env.DB_PATH);
-console.log(dbPath);
+// console.log(dbPath);
 const dbPassword = "adi121711";
 
 // Konfigurasi koneksi ODBC tanpa DSN

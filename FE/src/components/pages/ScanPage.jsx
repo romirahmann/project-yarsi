@@ -30,6 +30,7 @@ export function ScanPage() {
   const [filterIdProses, setFilterIdProses] = useState("All");
   const [rsName, setRsName] = useState("");
   const [query, setQuery] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [formData, setFormData] = useState({
     kode_checklist: "",
@@ -151,6 +152,10 @@ export function ScanPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+
     const dateNow = dayjs().format("YYYY-MM-DD");
     const timestamp = dayjs().format("HH:mm:ss");
     const submittedByUser = userLogin?.username || "";
@@ -187,6 +192,8 @@ export function ScanPage() {
         `Gagal menambahkan proses dengan Kode Checklist: ${newFormData.kode_checklist} dan ID Proses ${newFormData.idproses}`,
         "FAILED"
       );
+    } finally {
+      setIsSubmitting(false);
     }
 
     if (!isLocked) {

@@ -170,7 +170,6 @@ const exportCsv = async (req, res) => {
       "Urut",
       "Mulai",
       "Selesai",
-
       "rumahsakit",
       "FilePath",
     ];
